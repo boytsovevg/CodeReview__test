@@ -1,0 +1,39 @@
+<div class="form-group required">
+        <label class="col-xs-3 control-label">
+            Начало битвы
+        </label>
+        <div class="col-xs-3">
+            <div class="input-group">
+                <input name="StartDateTime"
+                       type="text" tabindex="1" class="form-control text-right"
+                       ng-class="{'input-error' : battleForm.battleStartDateTime.$invalid && vm.submitted,
+                                  'input-success': battleForm.battleStartDateTime.$valid && vm.submitted}"
+                       ng-model="vm.battle.battleStartDateTime"
+                       datepicker-popup="dd.MM.yyyy"
+                       datepicker-options="battleStartDateDatepicker.options"
+                       is-open="battleStartDateDatepicker.isOpened" required />
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" ng-click="battleStartDateDatepicker.toggle($event)">
+                        <i class="fa fa-calendar"></i>
+                    </button>
+                </span>
+            </div>
+            <small>Дата</small>
+        </div>
+        <div class="col-xs-2">
+                <input name="battleStartTime"
+                       class="form-control" type="text"
+                       ng-class="{'input-error' : battleForm.battleStartTime.$invalid && vm.submitted,
+                                  'input-success': battleForm.battleStartTime.$valid && vm.submitted}"
+                       ng-model="vm.battle.battleStartTime" required
+                       data-template="timePicker.html"
+                       data-length="1"
+                       data-time-format="HH:mm"
+                       data-model-time-format="HH:mm"
+                       data-arrow-behavior="picker"
+                       data-minute-step="1"
+                       data-time-type="string"
+                       bs-timepicker/>
+            <small>Время</small>
+        </div>
+    </div>
